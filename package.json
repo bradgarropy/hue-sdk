@@ -1,15 +1,18 @@
 {
-    "name": "node-starter",
-    "version": "1.1.0",
-    "description": "🟢 node.js javascript starter",
+    "name": "@bradgarropy/hue-sdk",
+    "version": "0.0.1",
+    "description": "💡 philips hue sdk",
     "keywords": [
         "node",
         "eslint",
-        "prettier"
+        "prettier",
+        "philips",
+        "hue",
+        "sdk"
     ],
-    "homepage": "https://github.com/bradgarropy/node-starter",
+    "homepage": "https://github.com/bradgarropy/hue-sdk",
     "bugs": {
-        "url": "https://github.com/bradgarropy/node-starter/issues"
+        "url": "https://github.com/bradgarropy/hue-sdk/issues"
     },
     "license": "MIT",
     "author": {
@@ -17,9 +20,10 @@
         "email": "bradgarropy@gmail.com",
         "url": "https://bradgarropy.com"
     },
+    "main": "src/index.js",
     "repository": {
         "type": "git",
-        "url": "https://github.com/bradgarropy/node-starter"
+        "url": "https://github.com/bradgarropy/hue-sdk"
     },
     "scripts": {
         "start": "node src/index.js",
@@ -28,7 +32,9 @@
         "test": "jest --passWithNoTests",
         "test:watch": "npm run test -- --watch"
     },
-    "dependencies": {},
+    "dependencies": {
+        "node-fetch": "^2.6.1"
+    },
     "devDependencies": {
         "@bradgarropy/eslint-config": "^1.1.0",
         "babel-eslint": "^10.1.0",
