@@ -1,0 +1,41 @@
+{
+    "name": "node-starter",
+    "version": "1.1.0",
+    "description": "🟢 node.js javascript starter",
+    "keywords": [
+        "node",
+        "eslint",
+        "prettier"
+    ],
+    "homepage": "https://github.com/bradgarropy/node-starter",
+    "bugs": {
+        "url": "https://github.com/bradgarropy/node-starter/issues"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Brad Garropy",
+        "email": "bradgarropy@gmail.com",
+        "url": "https://bradgarropy.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/bradgarropy/node-starter"
+    },
+    "scripts": {
+        "start": "node src/index.js",
+        "lint": "eslint .",
+        "lint:fix": "eslint . --fix",
+        "test": "jest --passWithNoTests",
+        "test:watch": "npm run test -- --watch"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "@bradgarropy/eslint-config": "^1.1.0",
+        "babel-eslint": "^10.1.0",
+        "eslint": "^7.16.0",
+        "eslint-config-prettier": "^7.1.0",
+        "eslint-plugin-simple-import-sort": "^7.0.0",
+        "jest": "^26.6.3",
+        "prettier": "^2.2.1"
+    }
+}
