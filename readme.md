@@ -62,11 +62,22 @@ console.log(lights)
 
 ## 📖 API Reference
 
-### `readLight(id)`
+### `Hue(ip, username)`
 
-| Name | Example  | Description |
-| ---- | -------- | ----------- |
-| `id` | `abc123` | Light id.   |
+| Name       | Example            | Description                  |
+| ---------- | ------------------ | ---------------------------- |
+| `ip`       | `"192.168.84.129"` | Philips Hue bridge ip.       |
+| `username` | `"bradgarropy"`    | Philips Hue bridge username. |
+
+```javascript
+const hue = new Hue("192.168.84.129", "bradgarropy")
+```
+
+### `hue.readLight(id)`
+
+| Name | Example    | Description |
+| ---- | ---------- | ----------- |
+| `id` | `"abc123"` | Light id.   |
 
 Get all information for a single light.
 
@@ -74,7 +85,7 @@ Get all information for a single light.
 hue.readLight("abc123")
 ```
 
-### `readLights()`
+### `hue.readLights()`
 
 Get all information for all lights.
 
@@ -82,11 +93,11 @@ Get all information for all lights.
 hue.readLights()
 ```
 
-### `updateLight(id, state)`
+### `hue.updateLight(id, state)`
 
 | Name    | Example       | Description  |
 | ------- | ------------- | ------------ |
-| `id`    | `abc123`      | Light id.    |
+| `id`    | `"abc123"`    | Light id.    |
 | `state` | `{on: false}` | Light state. |
 
 Update a light's state.
@@ -95,11 +106,11 @@ Update a light's state.
 hue.updateLight("abc123", {on: false})
 ```
 
-### `turnOnLight(id)`
+### `hue.turnOnLight(id)`
 
-| Name | Example  | Description |
-| ---- | -------- | ----------- |
-| `id` | `abc123` | Light id.   |
+| Name | Example    | Description |
+| ---- | ---------- | ----------- |
+| `id` | `"abc123"` | Light id.   |
 
 Turn on a specific light.
 
@@ -107,11 +118,11 @@ Turn on a specific light.
 hue.turnOnLight("abc123")
 ```
 
-### `turnOffLight(id)`
+### `hue.turnOffLight(id)`
 
-| Name | Example  | Description |
-| ---- | -------- | ----------- |
-| `id` | `abc123` | Light id.   |
+| Name | Example    | Description |
+| ---- | ---------- | ----------- |
+| `id` | `"abc123"` | Light id.   |
 
 Turn off a specific light.
 
@@ -119,12 +130,12 @@ Turn off a specific light.
 hue.turnOffLight("abc123")
 ```
 
-### `setBrightness(id, brightness)`
+### `hue.setBrightness(id, brightness)`
 
-| Name         | Example  | Description               |
-| ------------ | -------- | ------------------------- |
-| `id`         | `abc123` | Light id.                 |
-| `brightness` | `128`    | Brightness level (1-254). |
+| Name         | Example    | Description               |
+| ------------ | ---------- | ------------------------- |
+| `id`         | `"abc123"` | Light id.                 |
+| `brightness` | `128`      | Brightness level (1-254). |
 
 Set the brightness of a specific light.
 
@@ -132,12 +143,12 @@ Set the brightness of a specific light.
 hue.setBrightness("abc123", 128)
 ```
 
-### `setColor(id, color)`
+### `hue.setColor(id, color)`
 
-| Name    | Example  | Description  |
-| ------- | -------- | ------------ |
-| `id`    | `abc123` | Light id.    |
-| `color` | `blue`   | Light color. |
+| Name    | Example    | Description  |
+| ------- | ---------- | ------------ |
+| `id`    | `"abc123"` | Light id.    |
+| `color` | `"blue"`   | Light color. |
 
 Set the color of a specific light.
 
@@ -161,9 +172,9 @@ hue.setColor("abc123", "blue")
 
 ### `setRandomColor(id)`
 
-| Name | Example  | Description |
-| ---- | -------- | ----------- |
-| `id` | `abc123` | Light id.   |
+| Name | Example    | Description |
+| ---- | ---------- | ----------- |
+| `id` | `"abc123"` | Light id.   |
 
 Set a specific light to a random color.
 
