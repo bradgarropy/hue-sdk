@@ -64,11 +64,11 @@ console.log(lights)
 
 ### `readLight(id)`
 
-Get all information for a single light.
-
 | Name | Example  | Description |
 | ---- | -------- | ----------- |
 | `id` | `abc123` | Light id.   |
+
+Get all information for a single light.
 
 ```javascript
 hue.readLight("abc123")
@@ -136,10 +136,24 @@ hue.setBrightness("abc123", 128)
 
 Set the color of a specific light.
 
-| Name    | Example  | Description                                                                                                    |
-| ------- | -------- | -------------------------------------------------------------------------------------------------------------- |
-| `id`    | `abc123` | Light id.                                                                                                      |
-| `color` | `blue`   | Light color. (`random`, `white`, `red`, `orange`, `yellow`, `green`, `blue`, `purple`, `lime`, `teal`, `pink`) |
+Colors must be chosen from a preset list.
+
+-   `random`
+-   `white`
+-   `red`
+-   `orange`
+-   `yellow`
+-   `green`
+-   `blue`
+-   `purple`
+-   `lime`
+-   `teal`
+-   `pink`
+
+| Name    | Example  | Description  |
+| ------- | -------- | ------------ |
+| `id`    | `abc123` | Light id.    |
+| `color` | `blue`   | Light color. |
 
 ```javascript
 hue.setColor("abc123", "blue")
