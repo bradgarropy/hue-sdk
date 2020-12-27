@@ -8,7 +8,6 @@
     <img alt="npm" src="https://img.shields.io/npm/dt/@bradgarropy/hue-sdk?style=flat-square">
 </a>
 
-
 _[Philips Hue][hue] SDK for managing smart devices._
 
 ## 📦 Installation
@@ -27,10 +26,10 @@ Locate the ip address by navigating to https://discovery.meethue.com in a web br
 
 ```json
 [
-  {
-    "id": "001728fdfe70920f",
-    "internalipaddress": "192.168.84.129"
-  }
+    {
+        "id": "001728fdfe70920f",
+        "internalipaddress": "192.168.84.129"
+    }
 ]
 ```
 
@@ -64,12 +63,19 @@ console.log(lights)
 ## 📖 API Reference
 
 ### `readLight(id)`
+
 ### `readLights()`
+
 ### `updateLight(id, state)`
+
 ### `turnOnLight(id)`
+
 ### `turnOffLight(id)`
+
 ### `setBrightness(id, brightness)`
+
 ### `setColor(id, color)`
+
 ### `setRandomColor(id)`
 
 ## ❔ Questions
