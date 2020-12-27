@@ -7,3 +7,8 @@
 <a href="https://www.npmjs.com/package/@bradgarropy/hue-sdk">
     <img alt="npm" src="https://img.shields.io/npm/dt/@bradgarropy/hue-sdk?style=flat-square">
 </a>
+
+
+_[Philips Hue][hue] SDK for managing smart devices._
+
+[hue]: https://developers.meethue.com
