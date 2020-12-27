@@ -84,12 +84,12 @@ hue.readLights()
 
 ### `updateLight(id, state)`
 
-Update a light's state.
-
 | Name    | Example       | Description  |
 | ------- | ------------- | ------------ |
 | `id`    | `abc123`      | Light id.    |
 | `state` | `{on: false}` | Light state. |
+
+Update a light's state.
 
 ```javascript
 hue.updateLight("abc123", {on: false})
@@ -97,11 +97,11 @@ hue.updateLight("abc123", {on: false})
 
 ### `turnOnLight(id)`
 
-Turn on a specific light.
-
 | Name | Example  | Description |
 | ---- | -------- | ----------- |
 | `id` | `abc123` | Light id.   |
+
+Turn on a specific light.
 
 ```javascript
 hue.turnOnLight("abc123")
@@ -109,11 +109,11 @@ hue.turnOnLight("abc123")
 
 ### `turnOffLight(id)`
 
-Turn off a specific light.
+| Name | Example  | Description |
+| ---- | -------- | ----------- |
+| `id` | `abc123` | Light id.   |
 
-| Name | Example | Description |
-| ---- | ------- | ----------- |
-| `id` |         | Light id.   |
+Turn off a specific light.
 
 ```javascript
 hue.turnOffLight("abc123")
@@ -121,18 +121,23 @@ hue.turnOffLight("abc123")
 
 ### `setBrightness(id, brightness)`
 
-Set the brightness of a specific light.
-
 | Name         | Example  | Description               |
 | ------------ | -------- | ------------------------- |
 | `id`         | `abc123` | Light id.                 |
 | `brightness` | `128`    | Brightness level (1-254). |
+
+Set the brightness of a specific light.
 
 ```javascript
 hue.setBrightness("abc123", 128)
 ```
 
 ### `setColor(id, color)`
+
+| Name    | Example  | Description  |
+| ------- | -------- | ------------ |
+| `id`    | `abc123` | Light id.    |
+| `color` | `blue`   | Light color. |
 
 Set the color of a specific light.
 
@@ -150,22 +155,17 @@ Colors must be chosen from a preset list.
 -   `teal`
 -   `pink`
 
-| Name    | Example  | Description  |
-| ------- | -------- | ------------ |
-| `id`    | `abc123` | Light id.    |
-| `color` | `blue`   | Light color. |
-
 ```javascript
 hue.setColor("abc123", "blue")
 ```
 
 ### `setRandomColor(id)`
 
-Set a specific light to a random color.
-
 | Name | Example  | Description |
 | ---- | -------- | ----------- |
 | `id` | `abc123` | Light id.   |
+
+Set a specific light to a random color.
 
 ```javascript
 hue.setRandomColor("abc123")
