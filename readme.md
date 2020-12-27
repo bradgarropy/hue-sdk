@@ -136,10 +136,10 @@ hue.setBrightness("abc123", 128)
 
 Set the color of a specific light.
 
-| Name    | Example  | Description                                                                              |
-| ------- | -------- | ---------------------------------------------------------------------------------------- |
-| `id`    | `abc123` | Light id.                                                                                |
-| `color` | `blue`   | Light color. (random, white, red, orange, yellow, green, blue, purple, lime, teal, pink) |
+| Name    | Example  | Description                                                                                                    |
+| ------- | -------- | -------------------------------------------------------------------------------------------------------------- |
+| `id`    | `abc123` | Light id.                                                                                                      |
+| `color` | `blue`   | Light color. (`random`, `white`, `red`, `orange`, `yellow`, `green`, `blue`, `purple`, `lime`, `teal`, `pink`) |
 
 ```javascript
 hue.setColor("abc123", "blue")
