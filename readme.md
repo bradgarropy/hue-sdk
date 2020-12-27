@@ -79,7 +79,7 @@ const hue = new Hue("192.168.84.129", "bradgarropy")
 | ---- | ---------- | ----------- |
 | `id` | `"abc123"` | Light id.   |
 
-Get all information for a single light.
+Get all information for a specific light.
 
 ```javascript
 hue.readLight("abc123")
