@@ -64,19 +64,98 @@ console.log(lights)
 
 ### `readLight(id)`
 
+Get all information for a single light.
+
+| Name | Example  | Description |
+| ---- | -------- | ----------- |
+| `id` | `abc123` | Light id.   |
+
+```javascript
+hue.readLight("abc123")
+```
+
 ### `readLights()`
+
+Get all information for all lights.
+
+```javascript
+hue.readLights()
+```
 
 ### `updateLight(id, state)`
 
+Update a light's state.
+
+| Name    | Example       | Description  |
+| ------- | ------------- | ------------ |
+| `id`    | `abc123`      | Light id.    |
+| `state` | `{on: false}` | Light state. |
+
+```javascript
+hue.updateLight("abc123", {on: false})
+```
+
 ### `turnOnLight(id)`
+
+Turn on a specific light.
+
+| Name | Example  | Description |
+| ---- | -------- | ----------- |
+| `id` | `abc123` | Light id.   |
+
+```javascript
+hue.turnOnLight("abc123")
+```
 
 ### `turnOffLight(id)`
 
+Turn off a specific light.
+
+| Name | Example | Description |
+| ---- | ------- | ----------- |
+| `id` |         | Light id.   |
+
+```javascript
+hue.turnOffLight("abc123")
+```
+
 ### `setBrightness(id, brightness)`
+
+Set the brightness of a specific light.
+
+| Name         | Example  | Description               |
+| ------------ | -------- | ------------------------- |
+| `id`         | `abc123` | Light id.                 |
+| `brightness` | `128`    | Brightness level (1-254). |
+
+```javascript
+hue.setBrightness("abc123", 128)
+```
 
 ### `setColor(id, color)`
 
+Set the color of a specific light.
+
+| Name    | Example  | Description                                                                              |
+| ------- | -------- | ---------------------------------------------------------------------------------------- |
+| `id`    | `abc123` | Light id.                                                                                |
+| `color` | `blue`   | Light color. (random, white, red, orange, yellow, green, blue, purple, lime, teal, pink) |
+
+```javascript
+hue.setColor("abc123", "blue")
+```
+
 ### `setRandomColor(id)`
+
+Set a specific light to a random color.
+
+| Name | Example  | Description |
+| ---- | -------- | ----------- |
+| `id` | `abc123` | Light id.   |
+
+```javascript
+hue.setRandomColor("abc123")
+```
 
 ## ❔ Questions
 
