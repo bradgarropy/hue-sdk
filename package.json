@@ -1,6 +1,6 @@
 {
     "name": "@bradgarropy/hue-sdk",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "description": "💡 philips hue sdk",
     "keywords": [
         "node",
