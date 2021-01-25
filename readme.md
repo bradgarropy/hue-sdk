@@ -54,7 +54,8 @@ Now that all of the setup is done, here's how to send your first command to the 
 ```javascript
 const Hue = require("@bradgarropy/hue-sdk")
 
-const hue = new Hue(process.env.HUE_BRIDGE_IP, process.env.HUE_USERNAME)
+const hueClient = new HueClient(process.env.HUE_BRIDGE_IP, process.env.HUE_USERNAME)
+const hue = new Hue(hueClient)
 const lights = await hue.getLightsInfo()
 
 console.log(lights)
