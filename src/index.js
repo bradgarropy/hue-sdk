@@ -1,6 +1,5 @@
 const fetch = require("node-fetch")
-const colors = require("./colors")
-const {randomInteger} = require("./utils")
+const {getColor, getRandomColor} = require("./colors")
 
 class Hue {
     constructor(ip, username) {
@@ -52,29 +51,25 @@ class Hue {
         if (color === "random") {
             this.setRandomColor(id)
         } else {
-            this.updateLight(id, {xy: colors[color]})
+            this.updateLight(id, {xy: getColor(color)})
         }
     }
 
     setColors = (ids, color) => {
-        ids.forEach(id => {
-            if (color === "random") {
-                this.setRandomColor(id)
-            } else {
-                this.updateLight(id, {xy: colors[color]})
-            }
-        })
+        if (color === "random") {
+            this.setRandomColors(ids)
+        } else {
+            ids.forEach(id => this.setColor(id, color))
+        }
     }
 
     setRandomColor = id => {
-        const index = randomInteger(0, Object.entries(colors).length - 1)
-        const color = Object.keys(colors)[index]
+        const color = getRandomColor()
         this.setColor(id, color)
     }
 
     setRandomColors = ids => {
-        const index = randomInteger(0, Object.entries(colors).length - 1)
-        const color = Object.keys(colors)[index]
+        const color = getRandomColor()
         this.setColors(ids, color)
     }
 }
