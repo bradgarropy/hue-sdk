@@ -55,7 +55,7 @@ Now that all of the setup is done, here's how to send your first command to the 
 const Hue = require("@bradgarropy/hue-sdk")
 
 const hue = new Hue(process.env.HUE_BRIDGE_IP, process.env.HUE_USERNAME)
-const lights = await hue.readLights()
+const lights = await hue.getLightsInfo()
 
 console.log(lights)
 ```
@@ -73,7 +73,7 @@ console.log(lights)
 const hue = new Hue("192.168.84.129", "bradgarropy")
 ```
 
-### `hue.readLight(id)`
+### `hue.getLightInfo(id)`
 
 | Name | Example    | Description |
 | ---- | ---------- | ----------- |
@@ -82,28 +82,15 @@ const hue = new Hue("192.168.84.129", "bradgarropy")
 Get all information for a specific light.
 
 ```javascript
-hue.readLight("abc123")
+hue.getLightInfo("abc123")
 ```
 
-### `hue.readLights()`
+### `hue.getLightsInfo()`
 
 Get all information for all lights.
 
 ```javascript
-hue.readLights()
-```
-
-### `hue.updateLight(id, state)`
-
-| Name    | Example       | Description  |
-| ------- | ------------- | ------------ |
-| `id`    | `"abc123"`    | Light id.    |
-| `state` | `{on: false}` | Light state. |
-
-Update a light's state.
-
-```javascript
-hue.updateLight("abc123", {on: false})
+hue.getLightsInfo()
 ```
 
 ### `hue.turnOnLight(id)`
@@ -118,6 +105,20 @@ Turn on a specific light.
 hue.turnOnLight("abc123")
 ```
 
+### `hue.turnOnAllLights()`
+
+Turn on all lights.
+
+```javascript
+hue.turnOnAllLights()
+```
+### `hue.turnOffAllLights()`
+
+Turn on all lights.
+
+```javascript
+hue.turnOffAllLights()
+```
 ### `hue.turnOffLight(id)`
 
 | Name | Example    | Description |

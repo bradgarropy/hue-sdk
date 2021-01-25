@@ -6,52 +6,45 @@ class Hue {
         this.api = `http://${ip}/api/${username}`
     }
 
-    readLight = async id => {
-        const response = await fetch(`${this.api}/lights/${id}`, {
-            method: "GET",
-        })
-
-        const json = await response.json()
-        const light = {id, ...json}
-
-        return light
+    getLightInfo = async id => {
+        return readLight(id)
     }
 
-    readLights = async () => {
-        const response = await fetch(`${this.api}/lights`, {method: "GET"})
-        const json = await response.json()
-
-        const lights = Object.entries(json).map(([id, light]) => {
-            return {id, ...light}
-        })
-
-        return lights
-    }
-
-    updateLight = (id, state) => {
-        fetch(`${this.api}/lights/${id}/state`, {
-            method: "PUT",
-            body: JSON.stringify(state),
-        })
+    getLightsInfo = async () => {
+        return readLights()
     }
 
     turnOnLight = id => {
-        this.updateLight(id, {on: true})
+        updateLight(id, {on: true})
     }
 
     turnOffLight = id => {
-        this.updateLight(id, {on: false})
+        updateLight(id, {on: false})
+    }
+
+    turnOffAllLights = () => {
+        const lights = this.getLightsInfo()
+        lights.forEach((light) => {
+            updateLight(light.id, {on: false})
+        })
+    }
+
+    turnOnAllLights = () => {
+        const lights = this.getLightsInfo()
+        lights.forEach((light) => {
+            updateLight(light.id, {on: true})
+        })
     }
 
     setBrightness = (id, brightness) => {
-        this.updateLight(id, {bri: brightness})
+        updateLight(id, {bri: brightness})
     }
 
     setColor = (id, color) => {
         if (color === "random") {
             this.setRandomColor(id)
         } else {
-            this.updateLight(id, {xy: getColor(color)})
+            updateLight(id, {xy: getColor(color)})
         }
     }
 
@@ -72,6 +65,35 @@ class Hue {
         const color = getRandomColor()
         this.setColors(ids, color)
     }
+}
+
+async function updateLight(id, state) {
+    fetch(`${this.api}/lights/${id}/state`, {
+        method: "PUT",
+        body: JSON.stringify(state),
+    })
+}
+
+async function readLight(id) {
+    const response = await fetch(`${this.api}/lights/${id}`, {
+        method: "GET",
+    })
+
+    const json = await response.json()
+    const light = {id, ...json}
+
+    return light
+}
+
+async function readLights() {
+    const response = await fetch(`${this.api}/lights`, {method: "GET"})
+    const json = await response.json()
+
+    const lights = Object.entries(json).map(([id, light]) => {
+        return {id, ...light}
+    })
+
+    return lights
 }
 
 module.exports = Hue
