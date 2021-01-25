@@ -56,10 +56,26 @@ class Hue {
         }
     }
 
+    setColors = (ids, color) => {
+        ids.forEach(id => {
+            if (color === "random") {
+                this.setRandomColor(id)
+            } else {
+                this.updateLight(id, {xy: colors[color]})
+            }
+        })
+    }
+
     setRandomColor = id => {
         const index = randomInteger(0, Object.entries(colors).length - 1)
         const color = Object.keys(colors)[index]
         this.setColor(id, color)
+    }
+
+    setRandomColors = ids => {
+        const index = randomInteger(0, Object.entries(colors).length - 1)
+        const color = Object.keys(colors)[index]
+        this.setColors(ids, color)
     }
 }
 

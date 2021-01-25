@@ -170,6 +170,33 @@ Colors must be chosen from a preset list.
 hue.setColor("abc123", "blue")
 ```
 
+### `hue.setColors(ids, color)`
+
+| Name    | Example               | Description         |
+| ------- | --------------------- | ------------------- |
+| `id`    | `["abc123", "def456]` | Array of light ids. |
+| `color` | `"blue"`              | Light color.        |
+
+Set the color of multiple lights.
+
+Colors must be chosen from a preset list.
+
+-   `random`
+-   `white`
+-   `red`
+-   `orange`
+-   `yellow`
+-   `green`
+-   `blue`
+-   `purple`
+-   `lime`
+-   `teal`
+-   `pink`
+
+```javascript
+hue.setColors(["abc123", "def123"], "blue")
+```
+
 ### `setRandomColor(id)`
 
 | Name | Example    | Description |
@@ -180,6 +207,18 @@ Set a specific light to a random color.
 
 ```javascript
 hue.setRandomColor("abc123")
+```
+
+### `setRandomColors(ids)`
+
+| Name | Example               | Description         |
+| ---- | --------------------- | ------------------- |
+| `id` | `["abc123", "def456]` | Array of light ids. |
+
+Set a multiple lights to a random color.
+
+```javascript
+hue.setRandomColors(["abc123", "def123"])
 ```
 
 ## ❔ Questions
