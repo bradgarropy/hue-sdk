@@ -151,7 +151,7 @@ hue.turnOffLight("abc123")
 | ---- | ---------- | ----------- |
 | `id` | `"abc123"` | Light id.   |
 | `interval` | `750` | Optional parameter. Duration of waiting between on and off state. |
-| `count` | `1` | Optional parameter. Determines number of time light will blink.   |
+| `count` | `1` | Optional parameter. Determines number of times the light will blink.   |
 
 "Blinks" a specific light.
 
