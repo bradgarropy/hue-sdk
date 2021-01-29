@@ -1,3 +1,4 @@
+const { TestScheduler } = require("jest")
 const fetch = require("node-fetch")
 const {getColor, getRandomColor} = require("./colors")
 const {sleep} = require("./utils")
@@ -10,7 +11,7 @@ class Hue {
         this.updateLight(id, {on: true})
     }
 
-    turnOffLight = id => {
+    turnOffLight = async (id) => {
         this.updateLight(id, {on: false})
     }
     
@@ -30,14 +31,14 @@ class Hue {
     }
     
     blinkLight = async (id, interval = 750, count = 1) => {
+        const {state} = await this.readLight(id)
         while(count > 0){
-            this.turnOnLight(id)
+            await this.updateLight(id, {state, on: !state.on})
             await sleep(interval)
-            this.turnOffLight(id)
-            await sleep(interval)
-            this.turnOnLight(id)
+            await this.updateLight(id, {state, on: state.on})
             count--
         }
+        return Promise.resolve()
     }
     
     setBrightness = (id, brightness) => {
@@ -70,8 +71,12 @@ class Hue {
         this.setColors(ids, color)
     }
 
-    updateLight = (id, state) => {
-        fetch(`${this.api}/lights/${id}/state`, {
+    updateLight = async (id, state) => {
+        const lightState = await this.readLight(id)
+        if(JSON.stringify(lightState) === JSON.stringify(state)){
+            return
+        }
+        return fetch(`${this.api}/lights/${id}/state`, {
             method: "PUT",
             body: JSON.stringify(state),
         })
@@ -99,5 +104,6 @@ class Hue {
         return lights
     }
 }
+
 
 module.exports = Hue
