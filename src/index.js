@@ -1,56 +1,55 @@
+const fetch = require("node-fetch")
 const {getColor, getRandomColor} = require("./colors")
+const { sleep } = require("./utils")
 class Hue {
-    constructor(hueClient) {
-        this.client = hueClient
-    }
-
-    getLightInfo = async id => {
-        return this.client.readLight(id)
-    }
-
-    getLightsInfo = async () => {
-        return this.client.readLights(this.client)
+    constructor(ip, username) {
+        this.ip = ip
+        this.username = username
+        this.api = `http://${ip}/api/${username}`
     }
 
     turnOnLight = id => {
-        this.client.updateLight(id, {on: true}, )
+        this.updateLight(id, {on: true})
     }
 
     turnOffLight = id => {
-        this.client.updateLight(id, {on: false}, )
+        this.updateLight(id, {on: false})
     }
     
-    blinkLight = async id => {
-        this.turnOnLight(id)
-        await new Promise(resolve => setTimeout(resolve, 750))
-        this.turnOffLight(id)
-        await new Promise(resolve => setTimeout(resolve, 750))
-        this.turnOnLight(id)
+    blinkLight = async (id, interval = 750, count = 1) => {
+        while(count > 0){
+            this.turnOnLight(id)
+            await sleep(interval)
+            this.turnOffLight(id)
+            await sleep(interval)
+            this.turnOnLight(id)
+            count--
+        }
     }
 
     turnOffAllLights = async () => {
-        const lights = await this.getLightsInfo()
-        lights.forEach(async (light) => {
-            await this.client.updateLight(light.id, {on: false})
+        const lights = await this.readLights()
+        lights.forEach((light) => {
+            this.turnOffLight(light.id) 
         })
     }
 
     turnOnAllLights = async () => {
-        const lights = await this.getLightsInfo()
-        lights.forEach(async (light) => {
-            await this.client.updateLight(light.id, {on: true})
+        const lights = await this.readLights()
+        lights.forEach((light) => {
+            this.turnOnLight(light.id)
         })
     }
 
     setBrightness = (id, brightness) => {
-        this.client.updateLight(id, {bri: brightness})
+        this.updateLight(id, {bri: brightness})
     }
 
     setColor = (id, color) => {
         if (color === "random") {
             this.setRandomColor(id)
         } else {
-            this.client.updateLight(id, {xy: getColor(color)})
+            this.updateLight(id, {xy: getColor(color)})
         }
     }
 
@@ -70,6 +69,35 @@ class Hue {
     setRandomColors = ids => {
         const color = getRandomColor()
         this.setColors(ids, color)
+    }
+
+    async updateLight(id, state) {
+        fetch(`${this.api}/lights/${id}/state`, {
+            method: "PUT",
+            body: JSON.stringify(state),
+        })
+    }
+    
+    async readLight(id) {
+        const response = await fetch(`${this.api}/lights/${id}`, {
+            method: "GET",
+        })
+    
+        const json = await response.json()
+        const light = {id, ...json}
+    
+        return light
+    }
+    
+    async readLights() {
+        const response = await fetch(`${this.api}/lights`, {method: "GET"})
+        const json = await response.json()
+    
+        const lights = Object.entries(json).map(([id, light]) => {
+            return {id, ...light}
+        })
+    
+        return lights
     }
 }
 

@@ -70,9 +70,8 @@ Now that all of the setup is done, here's how to send your first command to the 
 ```javascript
 const Hue = require("@bradgarropy/hue-sdk")
 
-const hueClient = new HueClient(process.env.HUE_BRIDGE_IP, process.env.HUE_USERNAME)
-const hue = new Hue(hueClient)
-const lights = await hue.getLightsInfo()
+const hue = new Hue(process.env.HUE_BRIDGE_IP, process.env.HUE_USERNAME)
+const lights = await hue.readLights()
 
 console.log(lights)
 ```
@@ -90,7 +89,7 @@ console.log(lights)
 const hue = new Hue("192.168.84.129", "bradgarropy")
 ```
 
-### `hue.getLightInfo(id)`
+### `hue.readLight(id)`
 
 | Name | Example    | Description |
 | ---- | ---------- | ----------- |
@@ -99,15 +98,28 @@ const hue = new Hue("192.168.84.129", "bradgarropy")
 Get all information for a specific light.
 
 ```javascript
-hue.getLightInfo("abc123")
+hue.readLight("abc123")
 ```
 
-### `hue.getLightsInfo()`
+### `hue.readLights()`
 
 Get all information for all lights.
 
 ```javascript
-hue.getLightsInfo()
+hue.readLights()
+```
+
+### `hue.updateLight(id, state)`
+
+| Name    | Example       | Description  |
+| ------- | ------------- | ------------ |
+| `id`    | `"abc123"`    | Light id.    |
+| `state` | `{on: false}` | Light state. |
+
+Update a light's state.
+
+```javascript
+hue.updateLight("abc123", {on: false})
 ```
 
 ### `hue.turnOnLight(id)`
@@ -122,20 +134,6 @@ Turn on a specific light.
 hue.turnOnLight("abc123")
 ```
 
-### `hue.turnOnAllLights()`
-
-Turn on all lights.
-
-```javascript
-hue.turnOnAllLights()
-```
-### `hue.turnOffAllLights()`
-
-Turn on all lights.
-
-```javascript
-hue.turnOffAllLights()
-```
 ### `hue.turnOffLight(id)`
 
 | Name | Example    | Description |
@@ -146,6 +144,19 @@ Turn off a specific light.
 
 ```javascript
 hue.turnOffLight("abc123")
+```
+### `hue.blinkLight(id)`
+
+| Name | Example    | Description |
+| ---- | ---------- | ----------- |
+| `id` | `"abc123"` | Light id.   |
+| `interval` | `750` | Optional parameter. Duration of the entire blink operation.   |
+| `count` | `1` | Optional parameter. Determines number of time light will blink.   |
+
+"Blinks" a specific light.
+
+```javascript
+hue.blinkLight("abc123")
 ```
 
 ### `hue.setBrightness(id, brightness)`
