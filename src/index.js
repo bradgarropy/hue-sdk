@@ -36,6 +36,7 @@ class Hue {
             await this.updateLight(id, {on: !state.on})
             await sleep(interval)
             await this.updateLight(id, {on: state.on})
+            await sleep(interval)
             count--
         }
         return Promise.resolve()
@@ -72,10 +73,6 @@ class Hue {
     }
 
     updateLight = async (id, state) => {
-        const lightState = await this.readLight(id)
-        if(JSON.stringify(lightState) === JSON.stringify(state)){
-            return
-        }
         return fetch(`${this.api}/lights/${id}/state`, {
             method: "PUT",
             body: JSON.stringify(state),
