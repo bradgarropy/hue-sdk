@@ -14,6 +14,21 @@ class Hue {
         this.updateLight(id, {on: false})
     }
     
+    
+    turnOffAllLights = async () => {
+        const lights = await this.readLights()
+        lights.forEach((light) => {
+            this.turnOffLight(light.id) 
+        })
+    }
+    
+    turnOnAllLights = async () => {
+        const lights = await this.readLights()
+        lights.forEach((light) => {
+            this.turnOnLight(light.id)
+        })
+    }
+    
     blinkLight = async (id, interval = 750, count = 1) => {
         while(count > 0){
             this.turnOnLight(id)
@@ -24,21 +39,7 @@ class Hue {
             count--
         }
     }
-
-    turnOffAllLights = async () => {
-        const lights = await this.readLights()
-        lights.forEach((light) => {
-            this.turnOffLight(light.id) 
-        })
-    }
-
-    turnOnAllLights = async () => {
-        const lights = await this.readLights()
-        lights.forEach((light) => {
-            this.turnOnLight(light.id)
-        })
-    }
-
+    
     setBrightness = (id, brightness) => {
         this.updateLight(id, {bri: brightness})
     }
@@ -69,14 +70,14 @@ class Hue {
         this.setColors(ids, color)
     }
 
-    async updateLight(id, state) {
+    updateLight = (id, state) => {
         fetch(`${this.api}/lights/${id}/state`, {
             method: "PUT",
             body: JSON.stringify(state),
         })
     }
     
-    async readLight(id) {
+    readLight = async (id) => {
         const response = await fetch(`${this.api}/lights/${id}`, {
             method: "GET",
         })
@@ -87,7 +88,7 @@ class Hue {
         return light
     }
     
-    async readLights() {
+    readLights = async () => {
         const response = await fetch(`${this.api}/lights`, {method: "GET"})
         const json = await response.json()
     
