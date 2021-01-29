@@ -33,9 +33,9 @@ class Hue {
     blinkLight = async (id, interval = 750, count = 1) => {
         const {state} = await this.readLight(id)
         while(count > 0){
-            await this.updateLight(id, {state, on: !state.on})
+            await this.updateLight(id, {on: !state.on})
             await sleep(interval)
-            await this.updateLight(id, {state, on: state.on})
+            await this.updateLight(id, {on: state.on})
             count--
         }
         return Promise.resolve()
@@ -104,6 +104,5 @@ class Hue {
         return lights
     }
 }
-
 
 module.exports = Hue
