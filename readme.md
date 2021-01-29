@@ -8,6 +8,22 @@
     <img alt="npm" src="https://img.shields.io/npm/dt/@bradgarropy/hue-sdk?style=flat-square">
 </a>
 
+<a href="https://bundlephobia.com/result?p=@bradgarropy/hue-sdk">
+    <img alt="npm" src="https://img.shields.io/bundlephobia/min/@bradgarropy/hue-sdk?style=flat-square">
+</a>
+
+<a href="https://github.com/bradgarropy/hue-sdk/actions">
+    <img alt="npm" src="https://img.shields.io/github/workflow/status/bradgarropy/hue-sdk/release?style=flat-square">
+</a>
+
+<a href="https://www.typescriptlang.org/dt/search?search=%40bradgarropy%2Fhue-sdk">
+    <img alt="npm" src="https://img.shields.io/npm/types/@bradgarropy/hue-sdk?style=flat-square">
+</a>
+
+<a href="https://bradgarropy.com/discord">
+    <img alt="npm" src="https://img.shields.io/discord/748196643140010015?style=flat-square">
+</a>
+
 _[Philips Hue][hue] SDK for managing smart devices._
 
 ## 📦 Installation
