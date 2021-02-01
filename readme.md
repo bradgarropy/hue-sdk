@@ -13,7 +13,7 @@
 </a>
 
 <a href="https://github.com/bradgarropy/hue-sdk/actions">
-    <img alt="npm" src="https://img.shields.io/github/workflow/status/bradgarropy/hue-sdk/release?style=flat-square">
+    <img alt="npm" src="https://img.shields.io/github/workflow/status/bradgarropy/hue-sdk/%F0%9F%9A%80%20release?style=flat-square">
 </a>
 
 <a href="https://www.typescriptlang.org/dt/search?search=%40bradgarropy%2Fhue-sdk">
