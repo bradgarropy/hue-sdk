@@ -194,7 +194,7 @@ hue.turnOffAllLights()
 | `interval` | `false`  | `500`   | `750`      | Time between blinks. |
 | `count`    | `false`  | `1`     | `5`        | Number of blinks.    |
 
-Blinks a specific light.
+Blink a specific light.
 
 ```javascript
 hue.blinkLight("abc123")
@@ -210,7 +210,7 @@ hue.blinkLight("abc123", 750, 5)
 | `interval` | `false`  | `500`   | `750`                  | Time between blinks. |
 | `count`    | `false`  | `1`     | `5`                    | Number of blinks.    |
 
-Blinks multiple lights.
+Blink multiple lights.
 
 ```javascript
 hue.blinkLights(["abc123", "def456"])
