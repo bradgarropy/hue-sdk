@@ -29,7 +29,7 @@ class Hue {
         return lights
     }
 
-    updateLight = async (id, state) => {
+    updateLight = (id, state) => {
         fetch(`${this.api}/lights/${id}/state`, {
             method: "PUT",
             body: JSON.stringify(state),
