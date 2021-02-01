@@ -134,6 +134,26 @@ Turn on a specific light.
 hue.turnOnLight("abc123")
 ```
 
+### `hue.turnOnLights(ids)`
+
+| Name | Example                | Description         |
+| ---- | ---------------------- | ------------------- |
+| `id` | `["abc123", "def456"]` | Array of light ids. |
+
+Turn on multiple lights.
+
+```javascript
+hue.turnOnLights(["abc123", "def456"])
+```
+
+### `hue.turnOnAllLights()`
+
+Turn on all lights.
+
+```javascript
+hue.turnOnAllLights()
+```
+
 ### `hue.turnOffLight(id)`
 
 | Name | Example    | Description |
@@ -144,6 +164,26 @@ Turn off a specific light.
 
 ```javascript
 hue.turnOffLight("abc123")
+```
+
+### `hue.turnOffLights(ids)`
+
+| Name | Example                | Description         |
+| ---- | ---------------------- | ------------------- |
+| `id` | `["abc123", "def456"]` | Array of light ids. |
+
+Turn off multiple lights.
+
+```javascript
+hue.turnOffLights(["abc123", "def456"])
+```
+
+### `hue.turnOffAllLights()`
+
+Turn off all lights.
+
+```javascript
+hue.turnOffAllLights()
 ```
 
 ### `hue.blinkLight(id, interval, count)`
@@ -162,6 +202,22 @@ hue.blinkLight("abc123", 750)
 hue.blinkLight("abc123", 750, 5)
 ```
 
+### `hue.blinkLights(ids, interval, count)`
+
+| Name       | Required | Default | Example                | Description          |
+| ---------- | -------- | ------- | ---------------------- | -------------------- |
+| `id`       | `true`   |         | `["abc123", "def456"]` | Array of light ids.  |
+| `interval` | `false`  | `500`   | `750`                  | Time between blinks. |
+| `count`    | `false`  | `1`     | `5`                    | Number of blinks.    |
+
+Blinks multiple lights.
+
+```javascript
+hue.blinkLights(["abc123", "def456"])
+hue.blinkLights(["abc123", "def456"], 750)
+hue.blinkLights(["abc123", "def456"], 750, 5)
+```
+
 ### `hue.setBrightness(id, brightness)`
 
 | Name         | Example    | Description               |
@@ -173,6 +229,19 @@ Set the brightness of a specific light.
 
 ```javascript
 hue.setBrightness("abc123", 128)
+```
+
+### `hue.setBrightnesses(ids, brightness)`
+
+| Name         | Example                | Description               |
+| ------------ | ---------------------- | ------------------------- |
+| `id`         | `["abc123", "def456"]` | Array of light ids.       |
+| `brightness` | `128`                  | Brightness level (1-254). |
+
+Set the brightness of multiple lights.
+
+```javascript
+hue.setBrightnesses(["abc123", "def456"], 128)
 ```
 
 ### `hue.setColor(id, color)`
@@ -204,10 +273,10 @@ hue.setColor("abc123", "blue")
 
 ### `hue.setColors(ids, color)`
 
-| Name    | Example               | Description         |
-| ------- | --------------------- | ------------------- |
-| `id`    | `["abc123", "def456]` | Array of light ids. |
-| `color` | `"blue"`              | Light color.        |
+| Name    | Example                | Description         |
+| ------- | ---------------------- | ------------------- |
+| `id`    | `["abc123", "def456"]` | Array of light ids. |
+| `color` | `"blue"`               | Light color.        |
 
 Set the color of multiple lights.
 
@@ -243,9 +312,9 @@ hue.setRandomColor("abc123")
 
 ### `setRandomColors(ids)`
 
-| Name | Example               | Description         |
-| ---- | --------------------- | ------------------- |
-| `id` | `["abc123", "def456]` | Array of light ids. |
+| Name | Example                | Description         |
+| ---- | ---------------------- | ------------------- |
+| `id` | `["abc123", "def456"]` | Array of light ids. |
 
 Set a multiple lights to a random color.
 
