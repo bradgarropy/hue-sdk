@@ -1,4 +1,3 @@
-const { TestScheduler } = require("jest")
 const fetch = require("node-fetch")
 const {getColor, getRandomColor} = require("./colors")
 const {sleep} = require("./utils")
