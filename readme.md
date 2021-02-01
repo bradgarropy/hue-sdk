@@ -145,18 +145,21 @@ Turn off a specific light.
 ```javascript
 hue.turnOffLight("abc123")
 ```
-### `hue.blinkLight(id)`
 
-| Name | Example    | Description |
-| ---- | ---------- | ----------- |
-| `id` | `"abc123"` | Light id.   |
-| `interval` | `750` | Optional parameter. Duration of waiting between on and off state. |
-| `count` | `1` | Optional parameter. Determines number of times the light will blink.   |
+### `hue.blinkLight(id, interval, count)`
 
-"Blinks" a specific light.
+| Name       | Required | Default | Example    | Description          |
+| ---------- | -------- | ------- | ---------- | -------------------- |
+| `id`       | `true`   |         | `"abc123"` | Light id.            |
+| `interval` | `false`  | `500`   | `750`      | Time between blinks. |
+| `count`    | `false`  | `1`     | `5`        | Number of blinks.    |
+
+Blinks a specific light.
 
 ```javascript
 hue.blinkLight("abc123")
+hue.blinkLight("abc123", 750)
+hue.blinkLight("abc123", 750, 5)
 ```
 
 ### `hue.setBrightness(id, brightness)`
