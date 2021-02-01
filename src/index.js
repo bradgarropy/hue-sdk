@@ -69,23 +69,19 @@ class Hue {
     }
 
     blinkLight = async (id, interval = 500, count = 1) => {
-        const {state} = await this.readLight(id)
+        const light = await this.readLight(id)
 
-        while (count > 0) {
-            await this.updateLight(id, {on: !state.on})
+        for (let index = 0; index < count; index++) {
+            this.updateLight(id, {on: !light.state.on})
             await sleep(interval)
 
-            await this.updateLight(id, {on: state.on})
+            this.updateLight(id, {on: light.state.on})
             await sleep(interval)
-
-            count--
         }
-
-        return Promise.resolve()
     }
 
     blinkLights = (ids, interval = 500, count = 1) => {
-        ids.forEach(id => this.blinkLights(id, interval, count))
+        ids.forEach(id => this.blinkLight(id, interval, count))
     }
 
     setBrightness = (id, brightness) => {
