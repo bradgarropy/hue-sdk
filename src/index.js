@@ -10,28 +10,27 @@ class Hue {
         this.updateLight(id, {on: true})
     }
 
-    turnOffLight = async (id) => {
+    turnOffLight = async id => {
         this.updateLight(id, {on: false})
     }
-    
-    
+
     turnOffAllLights = async () => {
         const lights = await this.readLights()
-        lights.forEach((light) => {
-            this.turnOffLight(light.id) 
+        lights.forEach(light => {
+            this.turnOffLight(light.id)
         })
     }
-    
+
     turnOnAllLights = async () => {
         const lights = await this.readLights()
-        lights.forEach((light) => {
+        lights.forEach(light => {
             this.turnOnLight(light.id)
         })
     }
-    
-    blinkLight = async (id, interval = 750, count = 1) => {
+
+    blinkLight = async (id, interval = 500, count = 1) => {
         const {state} = await this.readLight(id)
-        while(count > 0){
+        while (count > 0) {
             await this.updateLight(id, {on: !state.on})
             await sleep(interval)
             await this.updateLight(id, {on: state.on})
@@ -40,7 +39,7 @@ class Hue {
         }
         return Promise.resolve()
     }
-    
+
     setBrightness = (id, brightness) => {
         this.updateLight(id, {bri: brightness})
     }
@@ -77,26 +76,26 @@ class Hue {
             body: JSON.stringify(state),
         })
     }
-    
-    readLight = async (id) => {
+
+    readLight = async id => {
         const response = await fetch(`${this.api}/lights/${id}`, {
             method: "GET",
         })
-    
+
         const json = await response.json()
         const light = {id, ...json}
-    
+
         return light
     }
-    
+
     readLights = async () => {
         const response = await fetch(`${this.api}/lights`, {method: "GET"})
         const json = await response.json()
-    
+
         const lights = Object.entries(json).map(([id, light]) => {
             return {id, ...light}
         })
-    
+
         return lights
     }
 }
