@@ -1,6 +1,7 @@
 const fetch = require("node-fetch")
 const {getColor, getRandomColor} = require("./colors")
 const {sleep} = require("./utils")
+
 class Hue {
     constructor(ip, username) {
         this.api = `http://${ip}/api/${username}`
