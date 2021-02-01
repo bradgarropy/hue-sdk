@@ -30,7 +30,7 @@ class Hue {
     }
 
     updateLight = async (id, state) => {
-        return fetch(`${this.api}/lights/${id}/state`, {
+        fetch(`${this.api}/lights/${id}/state`, {
             method: "PUT",
             body: JSON.stringify(state),
         })
@@ -40,64 +40,92 @@ class Hue {
         this.updateLight(id, {on: true})
     }
 
-    turnOffLight = async id => {
-        this.updateLight(id, {on: false})
-    }
-
-    turnOffAllLights = async () => {
-        const lights = await this.readLights()
-        lights.forEach(light => {
-            this.turnOffLight(light.id)
-        })
+    turnOnLights = ids => {
+        ids.forEach(id => this.turnOnLight(id))
     }
 
     turnOnAllLights = async () => {
         const lights = await this.readLights()
+
         lights.forEach(light => {
             this.turnOnLight(light.id)
         })
     }
 
+    turnOffLight = id => {
+        this.updateLight(id, {on: false})
+    }
+
+    turnOffLights = ids => {
+        ids.forEach(id => this.turnOffLight(id))
+    }
+
+    turnOffAllLights = async () => {
+        const lights = await this.readLights()
+
+        lights.forEach(light => {
+            this.turnOffLight(light.id)
+        })
+    }
+
     blinkLight = async (id, interval = 500, count = 1) => {
         const {state} = await this.readLight(id)
+
         while (count > 0) {
             await this.updateLight(id, {on: !state.on})
             await sleep(interval)
+
             await this.updateLight(id, {on: state.on})
             await sleep(interval)
+
             count--
         }
+
         return Promise.resolve()
+    }
+
+    blinkLights = async (ids, interval = 500, count = 1) => {
+        ids.forEach(id => this.blinkLights(id, interval, count))
     }
 
     setBrightness = (id, brightness) => {
         this.updateLight(id, {bri: brightness})
     }
 
+    setBrightnesses = (ids, brightness) => {
+        ids.forEach(id => this.setBrightness(id, brightness))
+    }
+
     setColor = (id, color) => {
         if (color === "random") {
-            this.setRandomColor(id)
-        } else {
-            this.updateLight(id, {xy: getColor(color)})
+            const randomColor = this.setRandomColor(id)
+            return randomColor
         }
+
+        this.updateLight(id, {xy: getColor(color)})
+        return color
     }
 
     setColors = (ids, color) => {
         if (color === "random") {
-            this.setRandomColors(ids)
-        } else {
-            ids.forEach(id => this.setColor(id, color))
+            const randomColor = this.setRandomColors(ids)
+            return randomColor
         }
+
+        ids.forEach(id => this.setColor(id, color))
+        return color
     }
 
     setRandomColor = id => {
         const color = getRandomColor()
         this.setColor(id, color)
+        return color
     }
 
     setRandomColors = ids => {
         const color = getRandomColor()
         this.setColors(ids, color)
+        return color
     }
 }
 
