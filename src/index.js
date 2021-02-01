@@ -84,7 +84,7 @@ class Hue {
         return Promise.resolve()
     }
 
-    blinkLights = async (ids, interval = 500, count = 1) => {
+    blinkLights = (ids, interval = 500, count = 1) => {
         ids.forEach(id => this.blinkLights(id, interval, count))
     }
 
