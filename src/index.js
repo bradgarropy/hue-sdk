@@ -7,6 +7,35 @@ class Hue {
         this.api = `http://${ip}/api/${username}`
     }
 
+    readLight = async id => {
+        const response = await fetch(`${this.api}/lights/${id}`, {
+            method: "GET",
+        })
+
+        const json = await response.json()
+        const light = {id, ...json}
+
+        return light
+    }
+
+    readLights = async () => {
+        const response = await fetch(`${this.api}/lights`, {method: "GET"})
+        const json = await response.json()
+
+        const lights = Object.entries(json).map(([id, light]) => {
+            return {id, ...light}
+        })
+
+        return lights
+    }
+
+    updateLight = async (id, state) => {
+        return fetch(`${this.api}/lights/${id}/state`, {
+            method: "PUT",
+            body: JSON.stringify(state),
+        })
+    }
+
     turnOnLight = id => {
         this.updateLight(id, {on: true})
     }
@@ -69,35 +98,6 @@ class Hue {
     setRandomColors = ids => {
         const color = getRandomColor()
         this.setColors(ids, color)
-    }
-
-    updateLight = async (id, state) => {
-        return fetch(`${this.api}/lights/${id}/state`, {
-            method: "PUT",
-            body: JSON.stringify(state),
-        })
-    }
-
-    readLight = async id => {
-        const response = await fetch(`${this.api}/lights/${id}`, {
-            method: "GET",
-        })
-
-        const json = await response.json()
-        const light = {id, ...json}
-
-        return light
-    }
-
-    readLights = async () => {
-        const response = await fetch(`${this.api}/lights`, {method: "GET"})
-        const json = await response.json()
-
-        const lights = Object.entries(json).map(([id, light]) => {
-            return {id, ...light}
-        })
-
-        return lights
     }
 }
 
