@@ -1,13 +1,16 @@
-const fetch = require("node-fetch")
-const {getColor, getRandomColor} = require("./colors")
-const {sleep} = require("./utils")
+import fetch from "node-fetch"
+
+import {getColor, getRandomColor} from "./colors"
+import {sleep} from "./utils"
 
 class Hue {
-    constructor(ip, username) {
+    api: string
+
+    constructor(ip: string, username: string) {
         this.api = `http://${ip}/api/${username}`
     }
 
-    readLight = async id => {
+    readLight = async (id: string) => {
         const response = await fetch(`${this.api}/lights/${id}`, {
             method: "GET",
         })
@@ -29,22 +32,22 @@ class Hue {
         return lights
     }
 
-    updateLight = (id, state) => {
+    updateLight = (id: string, state): void => {
         fetch(`${this.api}/lights/${id}/state`, {
             method: "PUT",
             body: JSON.stringify(state),
         })
     }
 
-    turnOnLight = id => {
+    turnOnLight = (id: string): void => {
         this.updateLight(id, {on: true})
     }
 
-    turnOnLights = ids => {
+    turnOnLights = (ids: string[]): void => {
         ids.forEach(id => this.turnOnLight(id))
     }
 
-    turnOnAllLights = async () => {
+    turnOnAllLights = async (): Promise<void> => {
         const lights = await this.readLights()
 
         lights.forEach(light => {
@@ -52,15 +55,15 @@ class Hue {
         })
     }
 
-    turnOffLight = id => {
+    turnOffLight = (id: string): void => {
         this.updateLight(id, {on: false})
     }
 
-    turnOffLights = ids => {
+    turnOffLights = (ids: string[]): void => {
         ids.forEach(id => this.turnOffLight(id))
     }
 
-    turnOffAllLights = async () => {
+    turnOffAllLights = async (): Promise<void> => {
         const lights = await this.readLights()
 
         lights.forEach(light => {
@@ -68,7 +71,11 @@ class Hue {
         })
     }
 
-    blinkLight = async (id, interval = 500, count = 1) => {
+    blinkLight = async (
+        id: string,
+        interval = 500,
+        count = 1,
+    ): Promise<void> => {
         const light = await this.readLight(id)
 
         for (let index = 0; index < count; index++) {
@@ -80,19 +87,19 @@ class Hue {
         }
     }
 
-    blinkLights = (ids, interval = 500, count = 1) => {
+    blinkLights = (ids: string[], interval = 500, count = 1): void => {
         ids.forEach(id => this.blinkLight(id, interval, count))
     }
 
-    setBrightness = (id, brightness) => {
+    setBrightness = (id: string, brightness: number): void => {
         this.updateLight(id, {bri: brightness})
     }
 
-    setBrightnesses = (ids, brightness) => {
+    setBrightnesses = (ids: string[], brightness: number): void => {
         ids.forEach(id => this.setBrightness(id, brightness))
     }
 
-    setColor = (id, color) => {
+    setColor = (id: string, color: string): string => {
         if (color === "random") {
             const randomColor = this.setRandomColor(id)
             return randomColor
@@ -102,7 +109,7 @@ class Hue {
         return color
     }
 
-    setColors = (ids, color) => {
+    setColors = (ids: string[], color: string): string => {
         if (color === "random") {
             const randomColor = this.setRandomColors(ids)
             return randomColor
@@ -112,17 +119,17 @@ class Hue {
         return color
     }
 
-    setRandomColor = id => {
+    setRandomColor = (id: string): string => {
         const color = getRandomColor()
         this.setColor(id, color)
         return color
     }
 
-    setRandomColors = ids => {
+    setRandomColors = (ids: string[]): string => {
         const color = getRandomColor()
         this.setColors(ids, color)
         return color
     }
 }
 
-module.exports = Hue
+export default Hue

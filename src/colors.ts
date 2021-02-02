@@ -1,4 +1,5 @@
-const {randomInteger} = require("./utils")
+import {Color} from "./types"
+import {randomInteger} from "./utils"
 
 const colors = {
     white: [0.3111, 0.3278],
@@ -13,12 +14,12 @@ const colors = {
     pink: [0.3806, 0.2026],
 }
 
-const getColor = color => colors[color]
+const getColor = (color: string): Color => colors[color]
 
-const getRandomColor = () => {
+const getRandomColor = (): string => {
     const index = randomInteger(0, Object.entries(colors).length - 1)
     const color = Object.keys(colors)[index]
     return color
 }
 
-module.exports = {getColor, getRandomColor}
+export {getColor, getRandomColor}
