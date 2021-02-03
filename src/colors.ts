@@ -1,7 +1,7 @@
-import {Color} from "./types"
+import {Color, XYColor} from "./types"
 import {randomInteger} from "./utils"
 
-const colors = {
+const colors: {[color in Color]: XYColor} = {
     white: [0.3111, 0.3278],
     red: [0.6059, 0.3088],
     orange: [0.5957, 0.3488],
@@ -14,11 +14,11 @@ const colors = {
     pink: [0.3806, 0.2026],
 }
 
-const getColor = (color: string): Color => colors[color]
+const getColor = (color: Color): XYColor => colors[color]
 
-const getRandomColor = (): string => {
+const getRandomColor = (): Color => {
     const index = randomInteger(0, Object.entries(colors).length - 1)
-    const color = Object.keys(colors)[index]
+    const color = Object.keys(colors)[index] as Color
     return color
 }
 

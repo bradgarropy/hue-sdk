@@ -1,6 +1,7 @@
 import fetch from "node-fetch"
 
 import {getColor, getRandomColor} from "./colors"
+import {Color, Light, LightState, RawLight} from "./types"
 import {sleep} from "./utils"
 
 class Hue {
@@ -10,7 +11,7 @@ class Hue {
         this.api = `http://${ip}/api/${username}`
     }
 
-    readLight = async (id: string) => {
+    readLight = async (id: string): Promise<Light> => {
         const response = await fetch(`${this.api}/lights/${id}`, {
             method: "GET",
         })
@@ -21,9 +22,9 @@ class Hue {
         return light
     }
 
-    readLights = async () => {
+    readLights = async (): Promise<Light[]> => {
         const response = await fetch(`${this.api}/lights`, {method: "GET"})
-        const json = await response.json()
+        const json: Record<Light["id"], RawLight> = await response.json()
 
         const lights = Object.entries(json).map(([id, light]) => {
             return {id, ...light}
@@ -32,7 +33,7 @@ class Hue {
         return lights
     }
 
-    updateLight = (id: string, state): void => {
+    updateLight = (id: string, state: Partial<LightState>): void => {
         fetch(`${this.api}/lights/${id}/state`, {
             method: "PUT",
             body: JSON.stringify(state),
@@ -99,7 +100,7 @@ class Hue {
         ids.forEach(id => this.setBrightness(id, brightness))
     }
 
-    setColor = (id: string, color: string): string => {
+    setColor = (id: string, color: Color | "random"): string => {
         if (color === "random") {
             const randomColor = this.setRandomColor(id)
             return randomColor
@@ -109,7 +110,7 @@ class Hue {
         return color
     }
 
-    setColors = (ids: string[], color: string): string => {
+    setColors = (ids: string[], color: Color | "random"): string => {
         if (color === "random") {
             const randomColor = this.setRandomColors(ids)
             return randomColor
