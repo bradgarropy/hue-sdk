@@ -34,11 +34,9 @@
         "url": "https://github.com/bradgarropy/hue-sdk"
     },
     "scripts": {
-        "start": "tsdx watch",
-        "build": "tsdx build",
-        "test": "tsdx test --passWithNoTests",
-        "lint": "tsdx lint",
-        "prepare": "tsdx build"
+        "start": "tsc --watch",
+        "build": "tsc",
+        "prepare": "tsc"
     },
     "dependencies": {
         "node-fetch": "^2.6.1"
@@ -53,8 +51,6 @@
         "eslint": "^7.19.0",
         "eslint-config-prettier": "^7.1.0",
         "eslint-plugin-simple-import-sort": "^7.0.0",
-        "tsdx": "^0.14.1",
-        "tslib": "^2.1.0",
         "typescript": "^4.1.3"
     },
     "engines": {

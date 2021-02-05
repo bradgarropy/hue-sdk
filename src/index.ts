@@ -133,4 +133,4 @@ class Hue {
     }
 }
 
-export default Hue
+export = Hue
