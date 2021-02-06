@@ -1,8 +1,10 @@
 {
     "name": "@bradgarropy/hue-sdk",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "💡 philips hue sdk",
     "keywords": [
+        "javascript",
+        "typescript",
         "node",
         "eslint",
         "prettier",
@@ -20,28 +22,38 @@
         "email": "bradgarropy@gmail.com",
         "url": "https://bradgarropy.com"
     },
-    "main": "src/index.js",
+    "files": [
+        "dist"
+    ],
+    "main": "dist/index.js",
+    "module": "dist/hue-sdk.esm.js",
+    "types": "dist/types/index.d.ts",
     "repository": {
         "type": "git",
         "url": "https://github.com/bradgarropy/hue-sdk"
     },
     "scripts": {
-        "start": "node src/index.js",
-        "lint": "eslint .",
-        "lint:fix": "eslint . --fix",
-        "test": "jest --passWithNoTests",
-        "test:watch": "npm run test -- --watch"
+        "start": "tsc --watch",
+        "build": "tsc",
+        "prepare": "tsc"
     },
     "dependencies": {
         "node-fetch": "^2.6.1"
     },
     "devDependencies": {
         "@bradgarropy/eslint-config": "^1.1.0",
+        "@bradgarropy/eslint-config-typescript": "^1.0.0",
+        "@types/node-fetch": "^2.5.8",
+        "@typescript-eslint/eslint-plugin": "^4.14.2",
+        "@typescript-eslint/parser": "^4.14.2",
         "babel-eslint": "^10.1.0",
-        "eslint": "^7.16.0",
+        "eslint": "^7.19.0",
         "eslint-config-prettier": "^7.1.0",
         "eslint-plugin-simple-import-sort": "^7.0.0",
-        "jest": "^26.6.3",
-        "prettier": "^2.2.1"
+        "tslib": "^2.1.0",
+        "typescript": "^4.1.3"
+    },
+    "engines": {
+        "node": ">=10"
     }
 }
