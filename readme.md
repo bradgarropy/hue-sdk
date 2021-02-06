@@ -9,7 +9,7 @@
 </a>
 
 <a href="https://bundlephobia.com/result?p=@bradgarropy/hue-sdk">
-    <img alt="npm" src="https://img.shields.io/bundlephobia/min/@bradgarropy/hue-sdk?style=flat-square">
+    <img alt="npm" src="https://img.shields.io/bundlephobia/minzip/@bradgarropy/hue-sdk?style=flat-square">
 </a>
 
 <a href="https://github.com/bradgarropy/hue-sdk/actions">
