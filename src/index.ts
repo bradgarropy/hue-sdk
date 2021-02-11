@@ -88,8 +88,13 @@ class Hue {
         }
     }
 
-    blinkLights = (ids: string[], interval = 500, count = 1): void => {
-        ids.forEach(id => this.blinkLight(id, interval, count))
+    blinkLights = (
+        ids: string[],
+        interval = 500,
+        count = 1,
+    ): Promise<void[]> => {
+        const promises = ids.map(id => this.blinkLight(id, interval, count))
+        return Promise.all(promises)
     }
 
     setBrightness = (id: string, brightness: number): void => {
