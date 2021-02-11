@@ -4,6 +4,7 @@ const config = {
     preset: "ts-jest",
     setupFiles: ["./tests/setup.ts"],
     testEnvironment: "node",
+    verbose: true,
 }
 
 module.exports = config
