@@ -322,6 +322,32 @@ Set a multiple lights to a random color.
 hue.setRandomColors(["abc123", "def123"])
 ```
 
+### `setLightToColorLoop(id, duration)`
+
+| Name | Example    | Description |
+| ---- | ---------- | ----------- |
+| `id` | `"abc123"` | Light id.   |
+| `duration` | `1000` | Duration of color loop.   |
+
+Set a specific light to color loop.
+
+```javascript
+hue.setLightToColorLoop("abc123")
+```
+
+### `setLightsToColorLoop(ids, duration)`
+
+| Name | Example    | Description |
+| ---- | ---------- | ----------- |
+| `id` | `["abc123", "def456"]` | Light ids.   |
+| `duration` | `1000` | Duration of color loop.   |
+
+Set a specific light to color loop.
+
+```javascript
+hue.setLightsToColorLoop(["abc123", "def456"])
+```
+
 ## ❔ Questions
 
 🐛 report bugs by filing [issues][issues]  
