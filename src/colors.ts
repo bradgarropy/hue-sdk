@@ -22,4 +22,4 @@ const getRandomColor = (): Color => {
     return color
 }
 
-export {getColor, getRandomColor}
+export {colors, getColor, getRandomColor}
