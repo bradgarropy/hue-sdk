@@ -132,7 +132,7 @@ class Hue {
         return color
     }
 
-    setLightToColorLoop = (id, duration) => {
+    setLightToColorLoop = (id: string, duration: number) => {
         this.updateLight(id, {effect: "colorloop"})
         if(duration){
             sleep(duration)
@@ -140,7 +140,7 @@ class Hue {
         }
     }
 
-    setLightsToColorLoop = (ids, duration) => {
+    setLightsToColorLoop = (ids: string[], duration: number) => {
         ids.forEach((id) => {
             this.setLightToColorLoop(id, duration)
         })
