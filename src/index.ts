@@ -5,9 +5,13 @@ import {Color, Light, LightState, RawLight} from "./types"
 import {sleep} from "./utils"
 
 class Hue {
+    ip: string
+    username: string
     api: string
 
     constructor(ip: string, username: string) {
+        this.ip = ip
+        this.username = username
         this.api = `http://${ip}/api/${username}`
     }
 

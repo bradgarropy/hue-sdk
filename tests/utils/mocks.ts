@@ -1,4 +1,4 @@
-import {Light, RawLight} from "../src/types"
+import {Light, RawLight} from "../../src/types"
 
 const rawLight: RawLight = {
     state: {
