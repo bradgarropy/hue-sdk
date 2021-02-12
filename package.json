@@ -27,6 +27,7 @@
     },
     "scripts": {
         "start": "node src/index.js",
+        "start:dev": "cross-env USERNAME=hn3OaLk3RAffEpcfPQ3EXdaAGWjw2NayO6KPtrko IP_ADDRESS=192.168.0.9 node src/index.js",
         "lint": "eslint .",
         "lint:fix": "eslint . --fix",
         "test": "jest --passWithNoTests",
@@ -38,6 +39,7 @@
     "devDependencies": {
         "@bradgarropy/eslint-config": "^1.1.0",
         "babel-eslint": "^10.1.0",
+        "cross-env": "^7.0.3",
         "eslint": "^7.16.0",
         "eslint-config-prettier": "^7.1.0",
         "eslint-plugin-simple-import-sort": "^7.0.0",

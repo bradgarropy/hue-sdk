@@ -18,6 +18,16 @@ class Hue {
         return light
     }
 
+    getAllScenes = async () => {
+        const response = await fetch(`${this.api}/scenes/TT-AEd45FxHFFxu`, {
+            method: "GET",
+        })
+
+        const json = await response.json()
+
+        return json
+    }
+
     readLights = async () => {
         const response = await fetch(`${this.api}/lights`, {method: "GET"})
         const json = await response.json()
@@ -123,6 +133,39 @@ class Hue {
         this.setColors(ids, color)
         return color
     }
+
+    setLightToColorLoop = (id, duration) => {
+        this.updateLight(id, {effect: "colorloop"})
+        if(duration){
+            sleep(duration)
+            this.updateLight(id, {effect: "none"})
+        }
+    }
+
+    setLightsToColorLoop = (ids, duration) => {
+        ids.forEach((id) => {
+            this.setLightToColorLoop(id, duration)
+        })
+    }
+
+    setScene = async () => {
+        const response = await fetch(`${this.api}/groups/5/action`, {
+            method: "PUT",
+            body: JSON.stringify({scene: 'TT-AEd45FxHFFxu'}),
+        })
+
+        const json = await response.json()
+
+        return json
+    }
 }
+
+async function test(){
+const hueClient = new Hue(process.env.IP_ADDRESS, process.env.USERNAME)
+console.log(await hueClient.getAllScenes())
+await hueClient.setScene()
+}
+
+test()
 
 module.exports = Hue
