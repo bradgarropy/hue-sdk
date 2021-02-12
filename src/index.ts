@@ -145,17 +145,7 @@ class Hue {
             this.setLightToColorLoop(id, duration)
         })
     }
-
-    setScene = async () => {
-        const response = await fetch(`${this.api}/groups/5/action`, {
-            method: "PUT",
-            body: JSON.stringify({scene: 'TT-AEd45FxHFFxu'}),
-        })
-
-        const json = await response.json()
-
-        return json
-    }
+    
 }
 
 export = Hue
