@@ -1,27 +1,31 @@
 # 💡 philips hue sdk
 
 <a href="https://www.npmjs.com/package/@bradgarropy/hue-sdk">
-    <img alt="npm" src="https://img.shields.io/npm/v/@bradgarropy/hue-sdk.svg?style=flat-square">
+    <img alt="npm version" src="https://img.shields.io/npm/v/@bradgarropy/hue-sdk.svg?style=flat-square">
 </a>
 
 <a href="https://www.npmjs.com/package/@bradgarropy/hue-sdk">
-    <img alt="npm" src="https://img.shields.io/npm/dt/@bradgarropy/hue-sdk?style=flat-square">
+    <img alt="npm downloads" src="https://img.shields.io/npm/dt/@bradgarropy/hue-sdk?style=flat-square">
 </a>
 
 <a href="https://bundlephobia.com/result?p=@bradgarropy/hue-sdk">
-    <img alt="npm" src="https://img.shields.io/bundlephobia/minzip/@bradgarropy/hue-sdk?style=flat-square">
+    <img alt="bundlephobia" src="https://img.shields.io/bundlephobia/minzip/@bradgarropy/hue-sdk?style=flat-square">
 </a>
 
 <a href="https://github.com/bradgarropy/hue-sdk/actions">
-    <img alt="npm" src="https://img.shields.io/github/workflow/status/bradgarropy/hue-sdk/%F0%9F%9A%80%20release?style=flat-square">
+    <img alt="github" src="https://img.shields.io/github/workflow/status/bradgarropy/hue-sdk/%F0%9F%9A%80%20release?style=flat-square">
+</a>
+
+<a href="https://coveralls.io/github/bradgarropy/hue-sdk">
+    <img alt="coveralls" src="https://img.shields.io/coveralls/github/bradgarropy/hue-sdk?style=flat-square">
 </a>
 
 <a href="https://www.typescriptlang.org/dt/search?search=%40bradgarropy%2Fhue-sdk">
-    <img alt="npm" src="https://img.shields.io/npm/types/@bradgarropy/hue-sdk?style=flat-square">
+    <img alt="typescript" src="https://img.shields.io/npm/types/@bradgarropy/hue-sdk?style=flat-square">
 </a>
 
 <a href="https://bradgarropy.com/discord">
-    <img alt="npm" src="https://img.shields.io/discord/748196643140010015?style=flat-square">
+    <img alt="discord" src="https://img.shields.io/discord/748196643140010015?style=flat-square">
 </a>
 
 _[Philips Hue][hue] SDK for managing smart devices._
