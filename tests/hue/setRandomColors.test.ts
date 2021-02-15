@@ -23,7 +23,7 @@ test("sets multiple random colors", async () => {
             `http://${hue.ip}/api/${hue.username}/lights/${id}/state`,
             {
                 method: "PUT",
-                body: JSON.stringify({xy: Colors.colors.purple}),
+                body: JSON.stringify({effect: "none", xy: Colors.colors.purple}),
             },
         )
     })

@@ -7,7 +7,7 @@ import {updateResponse} from "../utils/mocks"
 const getRandomColorSpy = jest.spyOn(Colors, "getRandomColor")
 getRandomColorSpy.mockReturnValue("purple")
 
-test("sets a color", async () => {
+test("sets a color and turns off any effects", async () => {
     fetch.mockResponse(JSON.stringify(updateResponse))
     hue.setColor("1", "purple")
 
@@ -17,12 +17,12 @@ test("sets a color", async () => {
         `http://${hue.ip}/api/${hue.username}/lights/1/state`,
         {
             method: "PUT",
-            body: JSON.stringify({xy: Colors.colors.purple}),
+            body: JSON.stringify({effect: "none", xy: Colors.colors.purple}),
         },
     )
 })
 
-test("sets a color to random", async () => {
+test("sets a color to random and turns off any effects", async () => {
     fetch.mockResponse(JSON.stringify(updateResponse))
     hue.setColor("1", "random")
 
@@ -35,7 +35,7 @@ test("sets a color to random", async () => {
         `http://${hue.ip}/api/${hue.username}/lights/1/state`,
         {
             method: "PUT",
-            body: JSON.stringify({xy: Colors.colors.purple}),
+            body: JSON.stringify({effect: "none", xy: Colors.colors.purple}),
         },
     )
 })

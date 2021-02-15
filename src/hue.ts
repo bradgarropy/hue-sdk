@@ -115,7 +115,10 @@ class Hue {
             return randomColor
         }
 
-        this.updateLight(id, {xy: getColor(color)})
+        this.updateLight(id, {
+            effect: "none",
+            xy: getColor(color)
+        })
         return color
     }
 
@@ -139,6 +142,23 @@ class Hue {
         const color = getRandomColor()
         this.setColors(ids, color)
         return color
+    }
+
+    setLightToColorLoop = async (id: string, duration?: number) => {
+        this.updateLight(id, {
+            on: true,
+            effect: "colorloop"
+        })
+        if(!!duration){
+            await sleep(duration)
+            this.updateLight(id, {effect: "none"})
+        }
+    }
+
+    setLightsToColorLoop = (ids: string[], duration?: number) => {
+        ids.forEach((id) => {
+            this.setLightToColorLoop(id, duration)
+        })
     }
 }
 
