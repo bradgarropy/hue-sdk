@@ -116,8 +116,8 @@ class Hue {
         }
 
         this.updateLight(id, {
-            effect: "none",
             xy: getColor(color),
+            effect: "none",
         })
         return color
     }
@@ -144,10 +144,7 @@ class Hue {
         return color
     }
 
-    setLightToColorLoop = async (
-        id: string,
-        duration?: number,
-    ): Promise<void> => {
+    setColorLoop = async (id: string, duration?: number): Promise<void> => {
         this.updateLight(id, {
             on: true,
             effect: "colorloop",
@@ -159,9 +156,9 @@ class Hue {
         }
     }
 
-    setLightsToColorLoop = (ids: string[], duration?: number): void => {
+    setColorLoops = (ids: string[], duration?: number): void => {
         ids.forEach(id => {
-            this.setLightToColorLoop(id, duration)
+            this.setColorLoop(id, duration)
         })
     }
 }

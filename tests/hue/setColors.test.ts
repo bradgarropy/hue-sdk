@@ -20,7 +20,10 @@ test("sets multiple colors and turn off any effects", async () => {
             `http://${hue.ip}/api/${hue.username}/lights/${id}/state`,
             {
                 method: "PUT",
-                body: JSON.stringify({effect: "none", xy: Colors.colors.purple}),
+                body: JSON.stringify({
+                    xy: Colors.colors.purple,
+                    effect: "none",
+                }),
             },
         )
     })
@@ -42,7 +45,10 @@ test("sets multiple colors to random and turn off any effects", async () => {
             `http://${hue.ip}/api/${hue.username}/lights/${id}/state`,
             {
                 method: "PUT",
-                body: JSON.stringify({effect: "none", xy: Colors.colors.purple}),
+                body: JSON.stringify({
+                    xy: Colors.colors.purple,
+                    effect: "none",
+                }),
             },
         )
     })
