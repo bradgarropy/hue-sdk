@@ -119,6 +119,7 @@ class Hue {
             xy: getColor(color),
             effect: "none",
         })
+
         return color
     }
 

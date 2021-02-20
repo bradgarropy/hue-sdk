@@ -7,7 +7,7 @@ import {updateResponse} from "../utils/mocks"
 const getRandomColorSpy = jest.spyOn(Colors, "getRandomColor")
 getRandomColorSpy.mockReturnValue("purple")
 
-test("sets multiple colors and turn off any effects", async () => {
+test("sets multiple colors", async () => {
     fetch.mockResponse(JSON.stringify(updateResponse))
 
     const ids = ["1", "2", "3"]
@@ -29,7 +29,7 @@ test("sets multiple colors and turn off any effects", async () => {
     })
 })
 
-test("sets multiple colors to random and turn off any effects", async () => {
+test("sets multiple colors to random", async () => {
     fetch.mockResponse(JSON.stringify(updateResponse))
 
     const ids = ["1", "2", "3"]
