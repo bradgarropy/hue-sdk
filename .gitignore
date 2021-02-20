@@ -15,7 +15,6 @@ coverage
 .netlify
 
 # secrets
-.env*
 *.env*
 
 # logs
