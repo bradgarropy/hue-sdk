@@ -1,42 +1,42 @@
 import fetch from "jest-fetch-mock"
 
-import * as Colors from "../../src/colors"
 import hue from "../utils/hue"
 import {updateResponse} from "../utils/mocks"
 
-const getRandomColorSpy = jest.spyOn(Colors, "getRandomColor")
-getRandomColorSpy.mockReturnValue("purple")
-
-test("sets multiple colors", async () => {
+test("color loops multiple lights", async () => {
     fetch.mockResponse(JSON.stringify(updateResponse))
 
     const ids = ["1", "2", "3"]
-    hue.setColors(ids, "purple")
+    await hue.colorLoopLights(ids, 2500)
 
-    expect(fetch).toHaveBeenCalledTimes(3)
+    expect(fetch).toHaveBeenCalledTimes(6)
 
     ids.forEach(id => {
         expect(fetch).toHaveBeenCalledWith(
             `http://${hue.ip}/api/${hue.username}/lights/${id}/state`,
             {
                 method: "PUT",
-                body: JSON.stringify({
-                    xy: Colors.colors.purple,
-                    effect: "none",
-                }),
+                body: JSON.stringify({on: true, effect: "colorloop"}),
+            },
+        )
+    })
+
+    ids.forEach(id => {
+        expect(fetch).toHaveBeenCalledWith(
+            `http://${hue.ip}/api/${hue.username}/lights/${id}/state`,
+            {
+                method: "PUT",
+                body: JSON.stringify({effect: "none"}),
             },
         )
     })
 })
 
-test("sets multiple colors to random", async () => {
+test("color loops multiple lights with default values", async () => {
     fetch.mockResponse(JSON.stringify(updateResponse))
 
     const ids = ["1", "2", "3"]
-    hue.setColors(ids, "random")
-
-    expect(getRandomColorSpy).toHaveBeenCalledTimes(1)
-    expect(getRandomColorSpy).toHaveReturnedWith("purple")
+    await hue.colorLoopLights(ids)
 
     expect(fetch).toHaveBeenCalledTimes(3)
 
@@ -45,10 +45,7 @@ test("sets multiple colors to random", async () => {
             `http://${hue.ip}/api/${hue.username}/lights/${id}/state`,
             {
                 method: "PUT",
-                body: JSON.stringify({
-                    xy: Colors.colors.purple,
-                    effect: "none",
-                }),
+                body: JSON.stringify({on: true, effect: "colorloop"}),
             },
         )
     })

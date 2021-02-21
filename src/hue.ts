@@ -115,7 +115,11 @@ class Hue {
             return randomColor
         }
 
-        this.updateLight(id, {xy: getColor(color)})
+        this.updateLight(id, {
+            xy: getColor(color),
+            effect: "none",
+        })
+
         return color
     }
 
@@ -139,6 +143,23 @@ class Hue {
         const color = getRandomColor()
         this.setColors(ids, color)
         return color
+    }
+
+    colorLoopLight = async (id: string, duration?: number): Promise<void> => {
+        this.updateLight(id, {
+            on: true,
+            effect: "colorloop",
+        })
+
+        if (duration) {
+            await sleep(duration)
+            this.updateLight(id, {effect: "none"})
+        }
+    }
+
+    colorLoopLights = (ids: string[], duration?: number): Promise<void[]> => {
+        const promises = ids.map(id => this.colorLoopLight(id, duration))
+        return Promise.all(promises)
     }
 }
 

@@ -192,11 +192,11 @@ hue.turnOffAllLights()
 
 ### `hue.blinkLight(id, interval, count)`
 
-| Name       | Required | Default | Example    | Description          |
-| ---------- | -------- | ------- | ---------- | -------------------- |
-| `id`       | `true`   |         | `"abc123"` | Light id.            |
-| `interval` | `false`  | `500`   | `750`      | Time between blinks. |
-| `count`    | `false`  | `1`     | `5`        | Number of blinks.    |
+| Name       | Required | Default | Example    | Description                 |
+| ---------- | -------- | ------- | ---------- | --------------------------- |
+| `id`       | `true`   |         | `"abc123"` | Light id.                   |
+| `interval` | `false`  | `500`   | `750`      | Time (`ms`) between blinks. |
+| `count`    | `false`  | `1`     | `5`        | Number of blinks.           |
 
 Blink a specific light.
 
@@ -208,11 +208,11 @@ hue.blinkLight("abc123", 750, 5)
 
 ### `hue.blinkLights(ids, interval, count)`
 
-| Name       | Required | Default | Example                | Description          |
-| ---------- | -------- | ------- | ---------------------- | -------------------- |
-| `id`       | `true`   |         | `["abc123", "def456"]` | Array of light ids.  |
-| `interval` | `false`  | `500`   | `750`                  | Time between blinks. |
-| `count`    | `false`  | `1`     | `5`                    | Number of blinks.    |
+| Name       | Required | Default | Example                | Description                 |
+| ---------- | -------- | ------- | ---------------------- | --------------------------- |
+| `id`       | `true`   |         | `["abc123", "def456"]` | Array of light ids.         |
+| `interval` | `false`  | `500`   | `750`                  | Time (`ms`) between blinks. |
+| `count`    | `false`  | `1`     | `5`                    | Number of blinks.           |
 
 Blink multiple lights.
 
@@ -323,7 +323,35 @@ hue.setRandomColor("abc123")
 Set a multiple lights to a random color.
 
 ```javascript
-hue.setRandomColors(["abc123", "def123"])
+hue.setRandomColors(["abc123", "def456"])
+```
+
+### `colorLoopLight(id, duration)`
+
+| Name       | Required | Default | Example  | Description                    |
+| ---------- | -------- | ------- | -------- | ------------------------------ |
+| `id`       | `true`   |         | `abc123` | Light id.                      |
+| `duration` | `false`  | `10000` | `60000`  | Duration (`ms`) of color loop. |
+
+Color loop a specific light.
+
+```javascript
+hue.colorLoopLight("abc123")
+hue.colorLoopLight("abc123", 60000)
+```
+
+### `colorLoopLights(ids, duration)`
+
+| Name       | Required | Default | Example                | Description                    |
+| ---------- | -------- | ------- | ---------------------- | ------------------------------ |
+| `id`       | `true`   |         | `["abc123", "def456"]` | Array of light ids.            |
+| `duration` | `false`  | `10000` | `60000`                | Duration (`ms`) of color loop. |
+
+Color loop multiple lights.
+
+```javascript
+hue.colorLoopLights(["abc123", "def456"])
+hue.colorLoopLights(["abc123", "def456"], 60000)
 ```
 
 ## ❔ Questions
