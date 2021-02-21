@@ -3,7 +3,7 @@ import fetch from "jest-fetch-mock"
 import hue from "../utils/hue"
 import {updateResponse} from "../utils/mocks"
 
-test("color loop multiple lights", async () => {
+test("color loops multiple lights", async () => {
     fetch.mockResponse(JSON.stringify(updateResponse))
 
     const ids = ["1", "2", "3"]
@@ -32,7 +32,7 @@ test("color loop multiple lights", async () => {
     })
 })
 
-test("color loop multiple lights with default values", async () => {
+test("color loops multiple lights with default values", async () => {
     fetch.mockResponse(JSON.stringify(updateResponse))
 
     const ids = ["1", "2", "3"]

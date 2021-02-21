@@ -28,7 +28,7 @@ test("color loops a light", async () => {
     )
 })
 
-test("color loop a light with default values", async () => {
+test("color loops a light with default values", async () => {
     fetch.mockResponse(JSON.stringify(updateResponse))
     hue.colorLoopLight("1")
 
