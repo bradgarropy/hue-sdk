@@ -1,12 +1,10 @@
-name: "🚀 release"
+name: "🧪 test"
 
-on:
-    release:
-        types: [published]
+on: pull_request
 
 jobs:
-    release:
-        name: "🚀 release"
+    test:
+        name: "🧪 test"
         runs-on: ubuntu-latest
         steps:
             - name: "📚 checkout"
@@ -20,11 +18,3 @@ jobs:
               run: npm install
             - name: "🧪 test"
               run: npm run test
-            - name: "👖 coveralls"
-              uses: coverallsapp/github-action@v1.1.2
-              with:
-                  github-token: ${{ secrets.GITHUB_TOKEN }}
-            - name: "🚀 publish"
-              run: npm publish --access public
-              env:
-                  NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
