@@ -331,7 +331,7 @@ hue.setRandomColors(["abc123", "def456"])
 | Name       | Required | Default | Example  | Description                    |
 | ---------- | -------- | ------- | -------- | ------------------------------ |
 | `id`       | `true`   |         | `abc123` | Light id.                      |
-| `duration` | `false`  | `10000` | `60000`  | Duration (`ms`) of color loop. |
+| `duration` | `false`  | `∞`     | `60000`  | Duration (`ms`) of color loop. |
 
 Color loop a specific light.
 
@@ -345,7 +345,7 @@ hue.colorLoopLight("abc123", 60000)
 | Name       | Required | Default | Example                | Description                    |
 | ---------- | -------- | ------- | ---------------------- | ------------------------------ |
 | `id`       | `true`   |         | `["abc123", "def456"]` | Array of light ids.            |
-| `duration` | `false`  | `10000` | `60000`                | Duration (`ms`) of color loop. |
+| `duration` | `false`  | `∞`     | `60000`                | Duration (`ms`) of color loop. |
 
 Color loop multiple lights.
 
