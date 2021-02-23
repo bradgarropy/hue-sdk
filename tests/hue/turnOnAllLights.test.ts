@@ -1,7 +1,7 @@
 import fetch from "jest-fetch-mock"
 
-import hue from "../utils/hue"
 import {generateLights, generateRawLights} from "../utils/generators"
+import hue from "../utils/hue"
 import {updateResponse} from "../utils/mocks"
 
 test("turns on all lights", async () => {

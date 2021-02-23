@@ -1,10 +1,10 @@
-name: "🧪 test"
+name: "💎 style"
 
 on: pull_request
 
 jobs:
-    test:
-        name: "🧪 test"
+    style:
+        name: "💎 style"
         runs-on: ubuntu-latest
         steps:
             - name: "📚 checkout"
@@ -16,5 +16,7 @@ jobs:
                   registry-url: https://registry.npmjs.org/
             - name: "📦 install"
               run: npm ci
-            - name: "🧪 test"
-              run: npm run test
+            - name: "🧶 lint"
+              run: npm run lint
+            - name: "💾 format"
+              run: npm run format

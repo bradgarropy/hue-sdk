@@ -17,7 +17,7 @@ jobs:
                   node-version: 14
                   registry-url: https://registry.npmjs.org/
             - name: "📦 install"
-              run: npm install
+              run: npm ci
             - name: "🧪 test"
               run: npm run test
             - name: "👖 coveralls"
