@@ -1,2 +1,2 @@
 import Hue from "./hue"
-export =      Hue;
+export = Hue
