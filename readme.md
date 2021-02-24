@@ -371,7 +371,7 @@ hue.colorLoopLights(["abc123", "def456"], 60000)
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://bradgarropy.com"><img src="https://avatars.githubusercontent.com/u/11336745?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Brad Garropy</b></sub></a><br /><a href="https://github.com/bradgarropy/hue-sdk/commits?author=bradgarropy" title="Code">💻</a> <a href="https://github.com/bradgarropy/hue-sdk/commits?author=bradgarropy" title="Documentation">📖</a> <a href="https://github.com/bradgarropy/hue-sdk/commits?author=bradgarropy" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://bradgarropy.com"><img src="https://avatars.githubusercontent.com/u/11336745?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Brad Garropy</b></sub></a><br /><a href="https://github.com/bradgarropy/hue-sdk/commits?author=bradgarropy" title="Code">💻</a> <a href="https://github.com/bradgarropy/hue-sdk/commits?author=bradgarropy" title="Documentation">📖</a> <a href="https://github.com/bradgarropy/hue-sdk/commits?author=bradgarropy" title="Tests">⚠️</a> <a href="#infra-bradgarropy" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
   </tr>
 </table>
 
