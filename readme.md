@@ -1,36 +1,13 @@
 # 💡 philips hue sdk
 
-<a href="https://www.npmjs.com/package/@bradgarropy/hue-sdk">
-    <img alt="npm version" src="https://img.shields.io/npm/v/@bradgarropy/hue-sdk.svg?style=flat-square">
-</a>
-
-<a href="https://www.npmjs.com/package/@bradgarropy/hue-sdk">
-    <img alt="npm downloads" src="https://img.shields.io/npm/dt/@bradgarropy/hue-sdk?style=flat-square">
-</a>
-
-<a href="https://bundlephobia.com/result?p=@bradgarropy/hue-sdk">
-    <img alt="bundlephobia" src="https://img.shields.io/bundlephobia/minzip/@bradgarropy/hue-sdk?style=flat-square">
-</a>
-
-<a href="https://github.com/bradgarropy/hue-sdk/actions">
-    <img alt="github" src="https://img.shields.io/github/workflow/status/bradgarropy/hue-sdk/%F0%9F%9A%80%20release?style=flat-square">
-</a>
-
-<a href="https://coveralls.io/github/bradgarropy/hue-sdk">
-    <img alt="coveralls" src="https://img.shields.io/coveralls/github/bradgarropy/hue-sdk?style=flat-square">
-</a>
-
-<a href="https://www.typescriptlang.org/dt/search?search=%40bradgarropy%2Fhue-sdk">
-    <img alt="typescript" src="https://img.shields.io/npm/types/@bradgarropy/hue-sdk?style=flat-square">
-</a>
-
-<a href="#-Contributors">
-    <img alt="contributors" src="https://img.shields.io/github/all-contributors/bradgarropy/hue-sdk?style=flat-square">
-</a>
-
-<a href="https://bradgarropy.com/discord">
-    <img alt="discord" src="https://img.shields.io/discord/748196643140010015?style=flat-square">
-</a>
+[![version][version-badge]][npm]
+[![downloads][downloads-badge]][npm]
+[![size][size-badge]][bundlephobia]
+[![github actions][github-actions-badge]][github-actions]
+[![coveralls][coveralls-badge]][coveralls]
+[![typescript][typescript-badge]][typescript]
+[![contributors][contributors-badge]][contributors]
+[![discord][discord-badge]][discord]
 
 _[Philips Hue][hue] SDK for managing smart devices._
 
@@ -388,3 +365,17 @@ hue.colorLoopLights(["abc123", "def456"], 60000)
 [issues]: https://github.com/bradgarropy/hue-sdk/issues
 [twitter]: https://twitter.com/bradgarropy
 [ama]: https://bradgarropy.com/ama
+[bundlephobia]: https://bundlephobia.com/result?p=@bradgarropy/hue-sdk
+[github-actions]: https://github.com/bradgarropy/hue-sdk/actions
+[coveralls]: https://coveralls.io/github/bradgarropy/hue-sdk
+[typescript]: https://www.typescriptlang.org/dt/search?search=%40bradgarropy%2Fhue-sdk
+[contributors]: #-Contributors
+[discord]: https://bradgarropy.com/discord
+[version-badge]: https://img.shields.io/npm/v/@bradgarropy/hue-sdk.svg?style=flat-square
+[downloads-badge]: https://img.shields.io/npm/dt/@bradgarropy/hue-sdk?style=flat-square
+[size-badge]: https://img.shields.io/bundlephobia/minzip/@bradgarropy/hue-sdk?style=flat-square
+[github-actions-badge]: https://img.shields.io/github/workflow/status/bradgarropy/hue-sdk/%F0%9F%9A%80%20release?style=flat-square
+[coveralls-badge]: https://img.shields.io/coveralls/github/bradgarropy/hue-sdk?style=flat-square
+[typescript-badge]: https://img.shields.io/npm/types/@bradgarropy/hue-sdk?style=flat-square
+[contributors-badge]: https://img.shields.io/github/all-contributors/bradgarropy/hue-sdk?style=flat-square
+[discord-badge]: https://img.shields.io/discord/748196643140010015?style=flat-square
