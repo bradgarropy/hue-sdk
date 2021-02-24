@@ -24,6 +24,10 @@
     <img alt="typescript" src="https://img.shields.io/npm/types/@bradgarropy/hue-sdk?style=flat-square">
 </a>
 
+<a href="#-Contributors">
+    <img alt="contributors" src="https://img.shields.io/github/all-contributors/bradgarropy/hue-sdk?style=flat-square">
+</a>
+
 <a href="https://bradgarropy.com/discord">
     <img alt="discord" src="https://img.shields.io/discord/748196643140010015?style=flat-square">
 </a>
@@ -359,6 +363,22 @@ hue.colorLoopLights(["abc123", "def456"], 60000)
 🐛 report bugs by filing [issues][issues]  
 📢 provide feedback with [issues][issues] or on [twitter][twitter]  
 🙋🏼‍♂️ use my [ama][ama] or [twitter][twitter] to ask any other questions
+
+## ✨ Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://bradgarropy.com"><img src="https://avatars.githubusercontent.com/u/11336745?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Brad Garropy</b></sub></a><br /><a href="https://github.com/bradgarropy/hue-sdk/commits?author=bradgarropy" title="Code">💻</a> <a href="https://github.com/bradgarropy/hue-sdk/commits?author=bradgarropy" title="Documentation">📖</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 [get-started]: https://developers.meethue.com/develop/get-started-2
 [bridge]: https://www.philips-hue.com/en-us/p/hue-bridge/046677458478
