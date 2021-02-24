@@ -24,6 +24,10 @@
     <img alt="typescript" src="https://img.shields.io/npm/types/@bradgarropy/hue-sdk?style=flat-square">
 </a>
 
+<a href="#-contributors">
+    <img alt="contributors" src="https://img.shields.io/github/all-contributors/bradgarropy/hue-sdk?style=flat-square">
+</a>
+
 <a href="https://bradgarropy.com/discord">
     <img alt="discord" src="https://img.shields.io/discord/748196643140010015?style=flat-square">
 </a>
