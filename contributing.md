@@ -2,8 +2,6 @@
 
 I would love your help to improve this project! Here are a few ways to contribute, and some guidelines to help you along the way.
 
-## 🐛 issues
-
 If you come across any bugs or something that doesn't seem right, please [open an issue][issues]. Also, if you have an idea for the project, open an issue to start the discussion.
 
 ### 🧬 reproduction
@@ -90,6 +88,18 @@ Any code you contribute is subject to the [MIT license][license].
 I appreciate any and all types of contributions to this project! Contributors are recognized here and in the [`readme`][contributors].
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://bradgarropy.com"><img src="https://avatars.githubusercontent.com/u/11336745?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Brad Garropy</b></sub></a><br /><a href="https://github.com/bradgarropy/hue-sdk/commits?author=bradgarropy" title="Code">💻</a> <a href="https://github.com/bradgarropy/hue-sdk/commits?author=bradgarropy" title="Documentation">📖</a> <a href="https://github.com/bradgarropy/hue-sdk/commits?author=bradgarropy" title="Tests">⚠️</a> <a href="#infra-bradgarropy" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+    <td align="center"><a href="https://github.com/willparr"><img src="https://avatars.githubusercontent.com/u/52459758?v=4?s=100" width="100px;" alt=""/><br /><sub><b>willparr</b></sub></a><br /><a href="https://github.com/bradgarropy/hue-sdk/commits?author=willparr" title="Code">💻</a> <a href="https://github.com/bradgarropy/hue-sdk/commits?author=willparr" title="Documentation">📖</a> <a href="https://github.com/bradgarropy/hue-sdk/commits?author=willparr" title="Tests">⚠️</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 [issues]: https://github.com/bradgarropy/hue-sdk/issues
