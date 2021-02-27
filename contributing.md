@@ -2,9 +2,9 @@
 
 I would love your help to improve this project! Here are a few ways to contribute, and some guidelines to help you along the way.
 
-If you come across any bugs or something that doesn't seem right, please [open an issue][issues]. Also, if you have an idea for the project, open an issue to start the discussion.
+## 🐛 issues
 
-### 🧬 reproduction
+If you come across any bugs or something that doesn't seem right, please [open an issue][issues]. Also, if you have an idea for the project, open an issue to start the discussion.
 
 When possible, please include a link to a `git` repository or a [CodeSandbox][codesandbox] which illustrates the problem you're facing. This is especially important when you find a bug.
 
