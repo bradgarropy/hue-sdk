@@ -6,9 +6,9 @@
 [![github actions][github-actions-badge]][github-actions]
 [![coveralls][coveralls-badge]][coveralls]
 [![typescript][typescript-badge]][typescript]
+[![contributing][contributing-badge]][contributing]
 [![contributors][contributors-badge]][contributors]
 [![discord][discord-badge]][discord]
-[![contributing][contributing-badge]][contributing]
 
 _[Philips Hue][hue] SDK for managing smart devices._
 
@@ -381,4 +381,4 @@ hue.colorLoopLights(["abc123", "def456"], 60000)
 [typescript-badge]: https://img.shields.io/npm/types/@bradgarropy/hue-sdk?style=flat-square
 [contributors-badge]: https://img.shields.io/github/all-contributors/bradgarropy/hue-sdk?style=flat-square
 [discord-badge]: https://img.shields.io/discord/748196643140010015?style=flat-square
-[contributing-badge]: https://img.shields.io/badge/PRs-welcome-blueviolet?style=flat-square
+[contributing-badge]: https://img.shields.io/badge/PRs-welcome-success?style=flat-square
