@@ -1,6 +1,10 @@
 name: "🧪 test"
 
-on: pull_request
+on:
+    push:
+        branches:
+            - master
+    pull_request:
 
 jobs:
     test:
@@ -18,3 +22,5 @@ jobs:
               run: npm ci
             - name: "🧪 test"
               run: npm run test
+            - name: "☂️ coverage"
+              uses: codecov/codecov-action@v1.2.1

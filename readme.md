@@ -4,7 +4,7 @@
 [![downloads][downloads-badge]][npm]
 [![size][size-badge]][bundlephobia]
 [![github actions][github-actions-badge]][github-actions]
-[![coveralls][coveralls-badge]][coveralls]
+[![codecov][codecov-badge]][codecov]
 [![typescript][typescript-badge]][typescript]
 [![contributing][contributing-badge]][contributing]
 [![contributors][contributors-badge]][contributors]
@@ -368,7 +368,7 @@ hue.colorLoopLights(["abc123", "def456"], 60000)
 [ama]: https://bradgarropy.com/ama
 [bundlephobia]: https://bundlephobia.com/result?p=@bradgarropy/hue-sdk
 [github-actions]: https://github.com/bradgarropy/hue-sdk/actions
-[coveralls]: https://coveralls.io/github/bradgarropy/hue-sdk
+[codecov]: https://app.codecov.io/gh/bradgarropy/hue-sdk
 [typescript]: https://www.typescriptlang.org/dt/search?search=%40bradgarropy%2Fhue-sdk
 [contributors]: #-Contributors
 [discord]: https://bradgarropy.com/discord
@@ -377,7 +377,7 @@ hue.colorLoopLights(["abc123", "def456"], 60000)
 [downloads-badge]: https://img.shields.io/npm/dt/@bradgarropy/hue-sdk?style=flat-square
 [size-badge]: https://img.shields.io/bundlephobia/minzip/@bradgarropy/hue-sdk?style=flat-square
 [github-actions-badge]: https://img.shields.io/github/workflow/status/bradgarropy/hue-sdk/%F0%9F%9A%80%20release?style=flat-square
-[coveralls-badge]: https://img.shields.io/coveralls/github/bradgarropy/hue-sdk?style=flat-square
+[codecov-badge]: https://img.shields.io/codecov/c/github/bradgarropy/hue-sdk?style=flat-square
 [typescript-badge]: https://img.shields.io/npm/types/@bradgarropy/hue-sdk?style=flat-square
 [contributors-badge]: https://img.shields.io/github/all-contributors/bradgarropy/hue-sdk?style=flat-square
 [discord-badge]: https://img.shields.io/discord/748196643140010015?style=flat-square
